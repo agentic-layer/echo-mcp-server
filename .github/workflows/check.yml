@@ -29,4 +29,4 @@ jobs:
 
       - name: 'Run tests'
         run: |
-          uv run python -m pytest || echo "No tests found"
+          uv run pytest tests/ -v
