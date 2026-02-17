@@ -14,14 +14,15 @@ async def test_server_name():
 @pytest.mark.asyncio
 async def test_echo_tool_exists():
     """Test that the echo tool is registered."""
-    tools = await mcp.get_tools()
-    assert "echo" in tools
-    assert tools["echo"].name == "echo"
+    tools = await mcp.list_tools()
+    tool_names = [tool.name for tool in tools]
+    assert "echo" in tool_names
 
 
 @pytest.mark.asyncio
 async def test_echo_tool_description():
     """Test that the echo tool has a description."""
-    tools = await mcp.get_tools()
-    echo_tool = tools["echo"]
+    tools = await mcp.list_tools()
+    echo_tool = next((tool for tool in tools if tool.name == "echo"), None)
+    assert echo_tool is not None
     assert "Echo back the provided message" in echo_tool.description

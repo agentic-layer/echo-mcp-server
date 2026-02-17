@@ -10,28 +10,14 @@ A simple MCP (Model Context Protocol) server that echoes messages. Built with [F
 
 ## Installation
 
-### Using uv (recommended)
+Requires [uv](https://github.com/astral-sh/uv).
 
 ```bash
-# Install uv if you haven't already
-pip install uv
-
-# Clone the repository
-git clone https://github.com/agentic-layer/echo-mcp-server.git
-cd echo-mcp-server
-
 # Install dependencies
 uv sync
 
 # Run the server
 uv run echo-mcp-server
-```
-
-### Using pip
-
-```bash
-pip install -e .
-echo-mcp-server
 ```
 
 ## Usage
@@ -59,15 +45,9 @@ docker run echo-mcp-server
 
 ## Development
 
+Run tests:
 ```bash
-# Install dependencies
-uv sync
-
-# Run the server
-uv run echo-mcp-server
-
-# Run tests (if available)
-uv run pytest
+uv run pytest tests/ -v
 ```
 
 ## License
