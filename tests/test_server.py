@@ -107,7 +107,7 @@ def test_second_tool_only_response_no_registration():
          "import asyncio; "
          "from echo_mcp_server.server import mcp; "
          "tools = asyncio.run(mcp.list_tools()); "
-         "print(len([t.name for t in tools]))"],
+         "print(len(tools))"],
         capture_output=True,
         text=True,
         env=env

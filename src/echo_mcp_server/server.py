@@ -31,7 +31,7 @@ second_tool_response = os.getenv("ECHO_TOOL_RESPONSE")
 # Register the second tool if both name and response are configured
 if second_tool_name and second_tool_response:
     @mcp.tool(name=second_tool_name)
-    def custom_tool() -> str:
+    def static_response_tool() -> str:
         """
         Returns a static configured response.
 
