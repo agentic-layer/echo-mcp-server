@@ -18,7 +18,7 @@ Requires [uv](https://github.com/astral-sh/uv).
 uv sync
 
 # Run the server
-uv run echo-mcp-server
+uv run fastmcp run src/echo_mcp_server/server.py --transport http
 ```
 
 ## Configuration
@@ -77,6 +77,7 @@ Build and run the server using Docker:
 ```bash
 docker build -t echo-mcp-server .
 docker run echo-mcp-server
+docker run -ti echo-mcp-server --host 0.0.0.0 --transport http --port 8001 --path /foo
 ```
 
 With custom configuration:

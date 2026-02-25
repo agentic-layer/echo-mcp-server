@@ -12,4 +12,5 @@ RUN uv sync --frozen
 COPY src ./src
 
 # Run the server
-CMD ["uv", "run", "echo-mcp-server"]
+ENTRYPOINT ["uv", "run", "fastmcp", "run", "src/echo_mcp_server/server.py"]
+CMD ["--host", "0.0.0.0", "--transport", "http"]
