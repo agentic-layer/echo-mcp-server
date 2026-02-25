@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "A simple MCP server that echoes messages"
 requires-python = ">=3.12"
 dependencies = [
-    "fastmcp>=3.0.0b0",
+    "fastmcp>=3.0.2",
 ]
 
 [build-system]
